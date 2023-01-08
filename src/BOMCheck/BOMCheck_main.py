@@ -13,15 +13,19 @@ class IhsMarkit:
         self.ihs = Selenium.ChromeIhs()
         self.part_number_list = []
         self.ordering_text_list = [8, 100]
+        self.ordering_text_col = 30
+        self.manufacturer_id_col = 29
+        self.part_number_col = 3
+        self.ext_datatabase_manu_col = 39
 
         for row in self.ordering_text_list:
             print("current row is #########################################################################################  " + str(row))
             # if self.input_sheet.cell(row=row, column=40).value != "Found":
-            self.manufacturer_id = self.input_sheet.cell(row=row, column=29).value
-            self.part_number1 = self.input_sheet.cell(row=row, column=3).value
-            self.ordering_text_input = self.input_sheet.cell(row=row, column=30).value
+            self.manufacturer_id = self.input_sheet.cell(row=row, column=self.manufacturer_id_col).value
+            self.part_number1 = self.input_sheet.cell(row=row, column=self.part_number_col).value
+            self.ordering_text_input = self.input_sheet.cell(row=row, column=self.ordering_text_col).value
             self.ordering_text = check_input_ordering_text1(self.ordering_text_input)
-            self.ext_manufacturer_id1 = self.input_sheet.cell(row=row, column=39).value
+            self.ext_manufacturer_id1 = self.input_sheet.cell(row=row, column=self.ext_datatabase_manu_col).value
             self.ext_manufacturer_id = check_input_ordering_text(self.ext_manufacturer_id1)
             first_word = str(self.ext_manufacturer_id).split()
             first_word = first_word[0]
