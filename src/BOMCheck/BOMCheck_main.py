@@ -12,7 +12,7 @@ class IhsMarkit:
         self.max_row = self.input_sheet.max_row
         self.ihs = Selenium.ChromeIhs()
         self.part_number_list = []
-        self.ordering_text_list = [8, 100]
+        self.ordering_text_list = [8, 100,44]
         self.ordering_text_col = 30
         self.manufacturer_id_col = 29
         self.part_number_col = 3
